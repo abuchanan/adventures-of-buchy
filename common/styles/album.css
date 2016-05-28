@@ -1,0 +1,34 @@
+.album {
+  color: #0e0e0e;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.album h1 {
+  font-weight: 200;
+  margin: 0;
+  font-size: 1.2em;
+  color: #eee;
+  margin-bottom: 10px;
+}
+
+.album .mini,
+.album .thumb {
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.album .mini {
+  height: 64px;
+  width: 64px;
+}
+
+.album .thumb {
+  height: 256px;
+  width: 256px;
+}

@@ -1,0 +1,23 @@
+import React from 'react';
+import { Head, Prose, YouTube } from '../../common/components';
+
+export default props => <Prose
+  title="Is photography the ends or the means?"
+  postDate="March 30th, 2016"
+  description="After an enthusiastic start to photography over the last couple months, I’ve started to consider  what photography means to me and to others."
+>
+
+<p>After an enthusiastic start to photography over the last couple months, I’ve started to consider  what photography means to me and to others.</p>
+
+<p>It starts with a world overrun by photographers. As a newbie, I take some landscape photos (or street or pick your genre) and post them online to 500px. In doing so, I realize that there are millions of extremely good photos already. Some are truly stunning, but many are very similar too: rugged, snow-capped mountains, a dramatic sunset, an aged and exotic face, a single soft character contrasting with sharp diagonal lines, a misty forest. Do I really want to chuck another (poor) replica on the heap? Aren’t we encouraged to be individual and creative?</p>
+
+<p>On the other hand, I have learned something that surprised me – the act of doing photography itself is fun and exciting and rewarding. This was something I never understood before I got a camera. You often hear people bemoan the proliferation of cameras. “You’re not living in the moment.” “You’re focusing on the camera instead of the life in front of you.” And certainly I still agree with many of those criticisms, but I didn’t understand just how much fun people were having taking the photo. I have lots of fun looking through the viewfinder. I’m always searching my surroundings for a nice framing, studying the craft, learning new editing techniques, etc. If I never worried about sharing my photos, would I find plenty of happiness in the craft alone?</p>
+
+<p>So all this led me to the question – is photography the end or the means?</p>
+
+<p>If it is the end, then I needn’t share my photos. The craft itself will keep me interested, and instead of worrying about all the other great photos out there, I’ll only worry about the ones in my personal collection. Instead of caring whether someone likes my photo, I’ll care about my skill level, my ability to get the photo I want.</p>
+
+<p>But isn’t everything better when it’s shared with someone?</p>
+
+<p>If it’s the means, then to what end? Personally, it won’t do to follow a well worn path, so I guess pictures of mountain landscapes and sunsets are out. How will I find a niche? Maybe finding a way to tell stories. Maybe getting into film and movement.</p>
+</Prose>;
