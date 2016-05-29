@@ -2,7 +2,8 @@
   color: #0e0e0e;
   display: block;
   text-decoration: none;
-  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
   text-align: center;
 }
 

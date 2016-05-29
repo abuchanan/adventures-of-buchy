@@ -16,6 +16,7 @@ import PhotosPage from '../pages/photos';
 import ProsePage from '../pages/prose';
 import EfficientlyLoadingPhotos from '../pages/prose/efficiently-loading-photos';
 import PhotographyEndsOrMeans from '../pages/prose/photography-ends-or-means';
+import BuildingThisWebsite from '../pages/prose/building-this-website';
 
 export default function getRoutes(isClient) {
 
@@ -70,6 +71,7 @@ function lazy(loader, onload) {
 }
 
 const Posts = [
+  { id: 'building-this-website', component: BuildingThisWebsite },
   { id: 'efficiently-loading-photos', component: EfficientlyLoadingPhotos },
   { id: 'photography-ends-or-means', component: PhotographyEndsOrMeans },
 ];
@@ -88,6 +90,20 @@ const ArtAlbums = [
 ];
 
 const PhotoAlbums = [
+  {
+    id: 'may-days-in-melbourne',
+    title: 'May Days in Melbourne',
+    description: 'Strolling the streets of Melbourne',
+    teaser: "http://adventures-of-buchy.xyz/photos/may-days-in-melbourne/full/018.jpg",
+    images: buildImageData('photos/may-days-in-melbourne', 29),
+  },
+  {
+    id: 'healesville',
+    title: 'Healesville',
+    description: "A trip to the Healesville animal sanctuary, complete with emu, kangaroo, koala, pelicans, and spectacular birds of prey",
+    teaser: "http://adventures-of-buchy.xyz/photos/healesville/full/021.jpg",
+    images: buildImageData('photos/healesville', 50),
+  },
   {
     id: 'broken-train',
     title: 'Broken Train',

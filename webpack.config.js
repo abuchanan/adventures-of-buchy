@@ -8,6 +8,7 @@ var render = require('./common/render');
 
 var routeslib = require('./common/routes').default(false);
 
+// TODO these are only loaded once, so `webpack watch` doesn't pick them up without a restart
 var ALBUM_PATHS = routeslib.AllAlbums.map(album => 'album/' + album.id);
 var PROSE_PATHS = routeslib.Posts.map(post => 'prose/' + post.id);
 

@@ -5,6 +5,13 @@ const ProsePage = props => <main id="prose-page">
   {/* props.posts.map(post => <post.component key={ post.id } />) */}
 
   <div className="card">
+    <h2>Building This Website: React, Webpack, Amazon</h2>
+    <p>Here's a little bit about how this website is built.</p>
+    <p><a href="/prose/building-this-website/">Read more</a></p>
+    <div className="post-date">May 28th, 2016</div>
+  </div>
+
+  <div className="card">
     <h2>Efficiently Loading Photos</h2>
     <p>I wrote a photo viewer component for this website and along the way I learned a thing or two about efficiently loading photos.</p>
     <p><a href="/prose/efficiently-loading-photos/">Read more</a></p>
