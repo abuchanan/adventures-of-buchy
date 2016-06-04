@@ -1,4 +1,5 @@
 import React from 'react';
+import { Head } from '../common/components';
 
 const icons = {
   "angular": "/icons/angular.png",
@@ -40,6 +41,10 @@ const Program = props => {
 
 export default props => <main id="code-page">
 
+  <Head
+    title="Code"
+  />
+
   <Program
     href="https://github.com/abuchanan/react-mapbox-location-search"
     title="Location Search UI Component"
@@ -71,7 +76,7 @@ export default props => <main id="code-page">
   <Program
     href="https://github.com/abuchanan/cue"
     title="cue"
-    preview="coming-soon.png"
+    preview="cue.png"
     description="Experimenting with converting R to Python" />
 
   <Program
@@ -84,21 +89,21 @@ export default props => <main id="code-page">
   <Program
     href="https://github.com/abuchanan/dempsy"
     title="dempsy"
-    preview="coming-soon.png"
+    preview="dempsy.png"
     description="Multiplayer crossword game web application."
     technologies="Javascript, Angular, Socket.io, MongoDB" />
 
   <Program
     href="https://github.com/abuchanan/gew"
     title="gew"
-    preview="coming-soon.png"
+    preview="gew.png"
     description="Toy simulation of grass, elk, and wolves."
     technologies="Javascript" />
 
   <Program
     href="https://github.com/abuchanan/gobblet"
     title="gobblet"
-    preview="coming-soon.png"
+    preview="gobblet.png"
     description="Simulated players for the Gobblet strategy game."
     technologies="Python" />
 

@@ -1,10 +1,15 @@
 import React from 'react';
+import { Head } from '../common/components';
 
 const Pub = props => <div>
   <a href={ props.url }>{ props.title }</a>
 </div>;
 
 export default props => <main id="resume-page">
+
+<Head
+  title="Resume"
+/>
 
 <h2>School</h2>
 <section className="resume-section">

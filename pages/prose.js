@@ -1,7 +1,12 @@
 import React from 'react';
+import { Head } from '../common/components';
 
 // TODO figure out how to incrementally load posts
 const ProsePage = props => <main id="prose-page">
+  <Head
+    title="Prose"
+  />
+
   {/* props.posts.map(post => <post.component key={ post.id } />) */}
 
   <div className="card">

@@ -1,7 +1,11 @@
 import React from 'react';
-import { YouTube } from '../common/components';
+import { Head, YouTube } from '../common/components';
 
 export default props => <main>
+<Head
+  title="Videos"
+/>
+
   <YouTube code="jFZA_AlcEGY" />
   <YouTube code="TVN5cKp6EcQ" />
   <YouTube code="eM50UzCZBMM" />

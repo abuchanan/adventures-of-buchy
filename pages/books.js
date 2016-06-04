@@ -1,8 +1,13 @@
 import React from 'react';
+import { Head } from '../common/components';
 
 const Book = props => <img className="book-cover" src={ "/bookcovers/" +  props.coverImage } />;
 
 export default props => <main className="book-covers">
+  <Head
+    title="Books"
+  />
+
   <Book title='One Hundred Years of Solitude' coverImage='one-hundred-years-of-solitude.jpeg' />
   <Book title="Ender's Game" coverImage='ender.jpg' />
   <Book title='White Fang' coverImage='white-fang.jpg' />
