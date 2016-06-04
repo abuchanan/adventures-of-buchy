@@ -1,4 +1,5 @@
 import React from 'react';
+import Hammer from 'react-hammerjs';
 
 const ViewerControl = {
 
@@ -7,8 +8,24 @@ const ViewerControl = {
       isOpen: false,
       images,
       currentImage: null,
-      nextImage: null,
+      // TODO what is the best place to track the direction?
+      direction: "forward"
     };
+  },
+
+  prefetchList(state) {
+    const max_prefetch = 5;
+    const position = state.images.indexOf(state.currentImage);
+
+    if (state.direction == 'backward') {
+      const start = Math.max(0, position - max_prefetch);
+      const images = state.images.slice(start, position);
+      images.reverse();
+      return images;
+
+    } else {
+      return state.images.slice(position + 1, position + max_prefetch + 1);
+    }
   },
 
   incrementImage(state) {
@@ -16,13 +33,12 @@ const ViewerControl = {
 
     if (position < state.images.length - 1) {
       const currentImage = state.images[position + 1];
-      const nextImage = state.images[position + 2];
 
       return {
         isOpen: state.isOpen,
         images: state.images,
         currentImage,
-        nextImage,
+        direction: "forward",
       };
     }
     return state;
@@ -34,13 +50,12 @@ const ViewerControl = {
 
     if (position > 0) {
       const currentImage = state.images[position - 1];
-      const nextImage = state.images[position - 2];
 
       return {
         isOpen: state.isOpen,
         images: state.images,
         currentImage,
-        nextImage,
+        direction: "backward",
       };
     }
     return state;
@@ -50,12 +65,12 @@ const ViewerControl = {
   open(state, image) {
 
     const position = state.images.indexOf(image);
-    const nextImage = state.images[position + 1];
+
     return {
       isOpen: true,
       images: state.images,
       currentImage: image,
-      nextImage,
+      direction: "forward",
     };
   },
 
@@ -64,7 +79,6 @@ const ViewerControl = {
       isOpen: false,
       images: state.images,
       currentImage: null,
-      nextImage: null,
     };
   }
 }
@@ -74,22 +88,10 @@ const Viewer = React.createClass({
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleKey);
-    this.prefetch();
   },
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKey);
-  },
-
-  componentDidUpdate() {
-    this.prefetch();
-  },
-
-  prefetch() {
-    if (this.props.nextImage) {
-      (new Image()).src = this.props.nextImage.url;
-      (new Image()).src = this.props.nextImage.miniUrl;
-    }
   },
 
   handleKey(e) {
@@ -110,6 +112,14 @@ const Viewer = React.createClass({
     }
   },
 
+  onSwipe(event) {
+    if (event.velocityX < 0) {
+      this.props.onIncrementImage();
+    } else if (event.velocityX > 0) {
+      this.props.onDecrementImage();
+    }
+  },
+
   render() {
     const image = this.props.image;
 
@@ -121,7 +131,9 @@ const Viewer = React.createClass({
         <button className="viewer-next" onClick={ this.props.onIncrementImage }></button>
         <button className="viewer-previous" onClick={ this.props.onDecrementImage }></button>
       </div>
-      <div className="viewer-image" style={ style }></div>
+      <Hammer onSwipe={this.onSwipe}>
+        <div className="viewer-image" style={ style } ref="viewerImage"></div>
+      </Hammer>
     </div>;
   }
 });

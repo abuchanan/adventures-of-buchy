@@ -21,6 +21,7 @@
     "fs-extra": "^0.30.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-hammerjs": "^0.4.6",
     "react-helmet": "^3.1.0",
     "react-router": "^2.4.0",
     "react-to-html-webpack-plugin": "^2.2.0",
@@ -38,5 +39,5 @@
     "deploy": "npm run clean-build && npm run sync-build && npm run sync-assets",
     "clean-build": "rm -rf built && webpack",
     "watch": "webpack --watch"
-   }
+  }
 }

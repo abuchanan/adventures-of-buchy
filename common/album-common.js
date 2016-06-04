@@ -77,27 +77,33 @@ const AlbumsPlusViewer = React.createClass({
     this.setState({ viewer: ViewerControl.close(this.state.viewer) });
   },
 
-  render() {
-      let content;
+  renderViewer() {
+    return <div>
+      <Viewer
+        image={ this.state.viewer.currentImage }
+        onDecrementImage={ this.onDecrementImage }
+        onIncrementImage={ this.onIncrementImage }
+        onClose={ this.onClose }
+      />
+      { ViewerControl.prefetchList(this.state.viewer).map(image => (
+        <link rel="prefetch" href={image.url} key={"prefetch-" + image.url} />
+      ))}
+    </div>;
+  },
 
-      if (this.state.viewer.isOpen) {
-        content = <Viewer
-          image={ this.state.viewer.currentImage }
-          nextImage={ this.state.viewer.nextImage }
-          onDecrementImage={ this.onDecrementImage }
-          onIncrementImage={ this.onIncrementImage }
-          onClose={ this.onClose }
-        />;
-
-      } else {
-        content = this.props.albums.map(album => <Album
+  renderAlbums() {
+    return (<div>
+      { this.props.albums.map(album => <Album
           key={album.title}
           onViewImage={ this.onOpen }
           {...album}
-        />);
-      }
+        />
+      )}
+    </div>);
+  },
 
-      return <div>{ content }</div>;
+  render() {
+    return this.state.viewer.isOpen ? this.renderViewer() : this.renderAlbums();
   }
 });
 
