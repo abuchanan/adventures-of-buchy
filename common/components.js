@@ -30,12 +30,36 @@ const Prose = props => <article className="prose">
 </div>
 </article>;
 
-const YouTube = props => <div className="youtube">
-  <iframe
-    src={ `https://www.youtube-nocookie.com/embed/${ props.code }` }
-    frameBorder="0"
-    allowFullScreen></iframe>
-  </div>;
+
+
+const YouTube = React.createClass({
+  getInitialState() {
+    return { play: false };
+  },
+
+  render() {
+    if (this.state.play) {
+      return (<div className="youtube">
+        <iframe
+          src={ `https://www.youtube-nocookie.com/embed/${ this.props.code }?autoplay=1&autohide=2&border=0` }
+          frameBorder="0"
+          allowFullScreen></iframe>
+      </div>);
+
+    } else {
+      return (<div className="youtube" onClick={() => this.setState({ play: true })}>
+        <img
+          className="youtube-thumb"
+          src={`//i.ytimg.com/vi/${this.props.code}/hqdefault.jpg`}
+        />
+        <div className="play-button"></div>
+      </div>);
+    }
+  }
+});
+
+ // TODO explore these options
+ // "&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
 
 const Page = props => <div className="page">
   <Head />

@@ -21,7 +21,7 @@ main {
 /**********************************************
  * Misc
  **********************************************/
- 
+
 #resume-page {
  background-color: #fbfbfb;
  color: #484848;
@@ -71,6 +71,30 @@ main {
     height: 100%;
 }
 
+.youtube .play-button {
+  background: transparent url("/icons/play-button.png") no-repeat;
+  height: 72px;
+  width: 72px;
+  left: 50%;
+  top: 50%;
+  margin-left: -36px;
+  margin-top: -36px;
+  position: absolute;
+}
+
+img.youtube-thumb {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: auto;
+  cursor: pointer;
+}
 
 .resume-section h3 {
   text-align: center;
