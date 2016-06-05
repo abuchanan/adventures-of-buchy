@@ -18,6 +18,7 @@ import EfficientlyLoadingPhotos from '../pages/prose/efficiently-loading-photos'
 import PhotographyEndsOrMeans from '../pages/prose/photography-ends-or-means';
 import BuildingThisWebsite from '../pages/prose/building-this-website';
 import ImprovedPrefetching from '../pages/prose/improved-prefetching';
+import LocationSearchDemo from '../demo/location-search';
 
 export default function getRoutes(isClient) {
 
@@ -70,6 +71,10 @@ function lazy(loader, onload) {
     }
   };
 }
+
+const Demos = [
+  { id: 'location-search', component: LocationSearchDemo },
+];
 
 const Posts = [
   { id: 'improved-prefetching', component: ImprovedPrefetching },
@@ -217,7 +222,11 @@ const routes = createRoutes([
     ].concat(Posts.map(post => ({
       path: `prose/${post.id}`,
       getComponent: lazy(post.component),
-    }))),
+    })))
+    .concat(Demos.map(demo => ({
+      path: `/demo/${demo.id}`,
+      getComponent: lazy(demo.component),
+    })))
   }
 ]);
 
@@ -225,6 +234,7 @@ const routes = createRoutes([
 return {
   routes,
   Posts,
+  Demos,
   AllAlbums,
   ArtAlbums,
   PhotoAlbums,

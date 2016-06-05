@@ -34,6 +34,7 @@
   },
   "author": "Alex Buchanan",
   "scripts": {
+    "build": "webpack",
     "dev": "node bin/serve.js",
     "deploy": "npm run clean-build && ./bin/sync.sh",
     "clean-build": "rm -rf built && webpack"

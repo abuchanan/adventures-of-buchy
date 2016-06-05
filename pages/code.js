@@ -24,14 +24,12 @@ const Program = props => {
       <h2>{ props.title }</h2>
       <div className="preview"
         style={{ backgroundImage: `url(/code-project-mocks/${props.preview})` }}>
-        {/* tech.map(t => (
-          <img src={icons[t.toLowerCase()]} alt={t} className="code-icon" key={t} />
-        )) */}
       </div>
 
       <div className="description">
         <div className="text-content">{ props.description }</div>
         <div className="buttons">
+          { props.demo ? <a className="demo-link" href={props.demo}>Demo</a> : null }
           <a className="code-link" href={props.href}>View code</a>
         </div>
       </div>
@@ -49,6 +47,7 @@ export default props => <main id="code-page">
     href="https://github.com/abuchanan/react-mapbox-location-search"
     title="Location Search UI Component"
     preview="location-search.png"
+    demo="/demo/location-search/"
     description="Location search bar, backed by Mapbox's geocode API, implemented as a React component."
     technologies="Javascript, React, Mapbox" />
 

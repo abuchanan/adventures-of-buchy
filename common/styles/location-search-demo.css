@@ -1,0 +1,37 @@
+#location-search-demo label {
+  display: block;
+}
+
+#location-search-demo input,
+#location-search-demo textarea {
+  width: 300px;
+  border-radius: 2px;
+  padding: 2px 10px;
+}
+
+#location-search-demo textarea {
+  height: 400px;
+}
+
+.location-search-results {
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.location-search-results li {
+  list-style-type: none;
+}
+
+
+.location-search-result {
+  background: #eee;
+  color: #333;
+  cursor: pointer;
+  padding: 2px 10px;
+}
+
+.location-search-result.highlighted {
+  background-color: #cacaca;
+}

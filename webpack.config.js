@@ -17,6 +17,7 @@ RenderPlugin.prototype.apply = function(compiler) {
 
     var ALBUM_PATHS = routeslib.AllAlbums.map(album => 'album/' + album.id);
     var PROSE_PATHS = routeslib.Posts.map(post => 'prose/' + post.id);
+    const DEMO_PATHS = routeslib.Demos.map(demo => 'demo/' + demo.id);
 
     const targets = [
       { path: '/', outputPath: 'index.html' },
@@ -27,7 +28,10 @@ RenderPlugin.prototype.apply = function(compiler) {
       'art',
       'photos',
       'prose',
-    ].concat(ALBUM_PATHS).concat(PROSE_PATHS);
+    ]
+    .concat(ALBUM_PATHS)
+    .concat(PROSE_PATHS)
+    .concat(DEMO_PATHS);
 
     const chunkFiles = {};
     compilation.chunks.forEach(chunk => {
@@ -88,13 +92,16 @@ module.exports = {
         loader: 'babel',
       },
       {
+        test: /\/demo\/.*\.js$/,
+        loaders: ['bundle?lazy', 'babel'],
+      },
+      {
         test: /\/pages.*\.js$/,
         loaders: ['bundle?lazy', 'babel'],
       },
     ]
   },
   entry: {
-
     app: './common/app.js',
     styles: './common/styles/site.css',
     vendor: ['react', 'react-router', 'react-dom'],

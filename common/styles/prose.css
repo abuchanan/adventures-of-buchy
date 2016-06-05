@@ -122,18 +122,24 @@
   text-align: right;
 }
 
-.code-project .code-link {
-  /*background-color: #ccc;*/
-  background-color: #448A5E;
+.code-project .code-link,
+.code-project .demo-link {
   color: #fbfbfb;
   padding: 5px 10px;
-  /*border: 1px solid #7EA28B;*/
   display: inline-block;
   border-radius: 5px;
-  /*margin-left: 10px;*/
+  margin-left: 10px;
   text-decoration: none;
   font-size: 0.9em;
 }
+.code-project .code-link {
+  background-color: #448A5E;
+}
+
+.code-project .demo-link {
+  background-color: #963636;
+}
+
 
 .card:first-child {
   border-radius: 2px 2px 0 0;
