@@ -6,17 +6,28 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var render = require('./common/render');
 
-var routeslib = require('./common/routes').default(false);
-
-// TODO these are only loaded once, so `webpack watch` doesn't pick them up without a restart
-var ALBUM_PATHS = routeslib.AllAlbums.map(album => 'album/' + album.id);
-var PROSE_PATHS = routeslib.Posts.map(post => 'prose/' + post.id);
-
 function RenderPlugin(options) {
   this.options = options;
 }
 RenderPlugin.prototype.apply = function(compiler) {
   compiler.plugin('emit', (compilation, callback) => {
+
+    delete require.cache['./common/routes'];
+    var routeslib = require('./common/routes').default(false);
+
+    var ALBUM_PATHS = routeslib.AllAlbums.map(album => 'album/' + album.id);
+    var PROSE_PATHS = routeslib.Posts.map(post => 'prose/' + post.id);
+
+    const targets = [
+      { path: '/', outputPath: 'index.html' },
+      'books',
+      'code',
+      'resume',
+      'videos',
+      'art',
+      'photos',
+      'prose',
+    ].concat(ALBUM_PATHS).concat(PROSE_PATHS);
 
     const chunkFiles = {};
     compilation.chunks.forEach(chunk => {
@@ -24,7 +35,6 @@ RenderPlugin.prototype.apply = function(compiler) {
     });
 
     const complete = [];
-    const targets = this.options.targets;
     const scripts = [];
     const styles = [];
 
@@ -84,14 +94,16 @@ module.exports = {
     ]
   },
   entry: {
+
     app: './common/app.js',
     styles: './common/styles/site.css',
     vendor: ['react', 'react-router', 'react-dom'],
   },
   output: {
     path: pathlib.join(__dirname, "built"),
+    publicPath: "/",
     filename: "[name].[chunkhash].js",
-    chunkFilename: "/[id].[chunkhash].js",
+    chunkFilename: "[id].[chunkhash].js",
   },
   plugins: [
       new webpack.NamedModulesPlugin(),
@@ -107,17 +119,6 @@ module.exports = {
         }
       }),
       new webpack.optimize.AggressiveMergingPlugin(),
-      new RenderPlugin({
-        targets: [
-          { path: '/', outputPath: 'index.html' },
-          'books',
-          'code',
-          'resume',
-          'videos',
-          'art',
-          'photos',
-          'prose',
-        ].concat(ALBUM_PATHS).concat(PROSE_PATHS),
-      }),
+      new RenderPlugin(),
   ],
 };

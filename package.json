@@ -28,16 +28,14 @@
     "style-loader": "^0.13.1",
     "uglify-js": "^2.6.2",
     "webpack": "^1.13.0",
+    "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-manifest-plugin": "^1.0.1"
   },
   "author": "Alex Buchanan",
   "scripts": {
-    "serve": "node bin/serve.js",
-    "sync-build": "aws s3 sync built s3://adventures-of-buchy.xyz",
-    "sync-assets": "aws s3 sync assets s3://adventures-of-buchy.xyz",
-    "deploy": "npm run clean-build && npm run sync-build && npm run sync-assets",
-    "clean-build": "rm -rf built && webpack",
-    "watch": "webpack --watch"
+    "dev": "node bin/serve.js",
+    "deploy": "npm run clean-build && ./bin/sync.sh",
+    "clean-build": "rm -rf built && webpack"
   }
 }
