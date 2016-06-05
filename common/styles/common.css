@@ -17,6 +17,11 @@ main {
   }
 }
 
+code {
+  padding: 0 5px;
+  background-color: #E5ECF8;
+}
+
 
 /**********************************************
  * Misc

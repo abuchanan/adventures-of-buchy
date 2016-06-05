@@ -10,6 +10,13 @@ const ProsePage = props => <main id="prose-page">
   {/* props.posts.map(post => <post.component key={ post.id } />) */}
 
   <div className="card">
+    <h2>Improved prefetching for the photo viewer</h2>
+    <p>In which I discover, yet again, that the browser vendors have been hard at work building cool shit that makes my work surprisingly easy.</p>
+    <p><a href="/prose/improved-prefetching/">Read more</a></p>
+    <div className="post-date">June 5th, 2016</div>
+  </div>
+
+  <div className="card">
     <h2>Building This Website: React, Webpack, Amazon</h2>
     <p>Here's a little bit about how this website is built.</p>
     <p><a href="/prose/building-this-website/">Read more</a></p>

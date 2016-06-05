@@ -17,6 +17,7 @@ import ProsePage from '../pages/prose';
 import EfficientlyLoadingPhotos from '../pages/prose/efficiently-loading-photos';
 import PhotographyEndsOrMeans from '../pages/prose/photography-ends-or-means';
 import BuildingThisWebsite from '../pages/prose/building-this-website';
+import ImprovedPrefetching from '../pages/prose/improved-prefetching';
 
 export default function getRoutes(isClient) {
 
@@ -71,6 +72,7 @@ function lazy(loader, onload) {
 }
 
 const Posts = [
+  { id: 'improved-prefetching', component: ImprovedPrefetching },
   { id: 'building-this-website', component: BuildingThisWebsite },
   { id: 'efficiently-loading-photos', component: EfficientlyLoadingPhotos },
   { id: 'photography-ends-or-means', component: PhotographyEndsOrMeans },

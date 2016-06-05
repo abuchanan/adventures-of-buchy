@@ -1,0 +1,42 @@
+import React from 'react';
+import { Head, Prose, YouTube } from '../../common/components';
+
+export default props => <Prose
+  title="Improved prefetching for the photo viewer"
+  postDate="June 5th, 2016"
+  description="In which I discover, yet again, that the browser vendors have been hard at work building cool shit that makes my work surprisingly easy."
+>
+
+<p>
+  <strong>TLDR;</strong> check out <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ"><code>{'<link rel="prefetch">'}</code></a> if you don't already know about it. It makes prefetching resources really easy.
+</p>
+
+<p>
+  While flicking through photos in the viewer on this site, ideally you wouldn't need to wait for each photo to load, the next photo should already be fully loaded, even if you jump through a few photos quickly. However, I wasn't achieving this ideal in the viewer I wrote. Frequently the next image wasn't fully loaded in time and you'd see a blurry, partially loaded image or even a blank screen and you'd have to wait a second or two, especially on a slow network. I thought, this is a fairly annoying experience and it distracts user from enjoying the photos.
+</p>
+
+<p>
+  The first version of the viewer only prefetched one image, so I wanted to make it prefetch many. But, there were some tricky cases to handle. How would I ensure that a prefetch request wasn't canceled midway only to be started again immediately? How would I ensure that prefetching only happened in the background so that it didn't slow down other high priority requests? I worried the solution was going to get complex.
+</p>
+
+<p>
+  Then I discovered <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ"><code>{'<link rel="prefetch">'}</code></a> which basically solved all the issues better than I could have ever done from Javascript. Instead of writing my writing my own prefetch controls, I just sprinkle a few <code>{'<link rel="prefetch">'}</code> tags into the body and the browser handles all the difficult parts in an intelligent way.
+</p>
+
+<p>
+  In the end, this is almost all the code I needed to add:
+</p>
+
+<pre><code>{`prefetchList(viewerState).map(image => (
+  <link rel="prefetch" href={image.url} key={"prefetch-" + image.url} />
+))`}</code></pre>
+
+<p>
+  <code>prefetchList</code> basically just gets the next five images from an array, but there is some slightly more advanced code that tracks the direction the user is browsing ("forward/backward").
+</p>
+
+<p>
+  So once again, the browser vendors have made my task really simple when I thought it was going to be really complex. Thanks browser vendors!
+</p>
+
+</Prose>;
