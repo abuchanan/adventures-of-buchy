@@ -1,6 +1,6 @@
 #!/bin/bash
 
-albumPath="assets/photos/may-days-in-melbourne"
+albumPath=$1
 albumName=$(basename $albumPath)
 mkdir -p $albumPath/mini squares/$albumName;
 

@@ -1,0 +1,40 @@
+# Content
+
+"Street photography is like fishing, catching the fish is more exciting than eating it."
+- Thomas Leuthard
+
+news about new photos albums on home page
+- possibly some nice styles/tool for putting together a collage teaser
+
+maybe make use of doodles to spice up home page?
+
+
+# Code
+
+
+viewer
+- movement during swipe
+- zooming (button? double tap? click?)
+- meta data on images
+- title and caption for images
+- url update for viewer image. query string?
+- load smaller images in viewer on mobile?
+- loading spinner
+
+CDN
+- invalidate HTML on deploy? Only a problem if I deploy twice in one day and I'm keen for people to see the udpates immediately?
+
+code highlighting
+
+RSS/atom feed
+
+
+improve analytics
+- how far do people get through photo albums
+- how to gauge interest in photos?
+- tags for entry points shared on FB
+
+
+Shut down tumblr?
+
+Lazy loading for albums page

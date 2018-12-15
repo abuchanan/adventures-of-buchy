@@ -43,6 +43,22 @@ export default props => <main id="code-page">
     title="Code"
   />
 
+
+  <Program
+    href="https://github.com/abuchanan/tree"
+    title="tree"
+    preview="tree.png"
+    description="Programmatically drawing a tree (the leafy green kind)."
+    demo="/demo/tree/"
+    technologies="Javascript, Three.js" />
+
+  <Program
+    href="https://github.com/abuchanan/kindlespark"
+    title="kindlespark"
+        preview="kindlespark.png"
+    description="Utility for generating Kindle ebooks from SparkNotes webpages."
+    technologies="Go" />
+
   <Program
     href="https://github.com/abuchanan/react-mapbox-location-search"
     title="Location Search UI Component"
@@ -109,84 +125,77 @@ export default props => <main id="code-page">
   <Program
     href="https://github.com/abuchanan/word-crosser"
     title="word-crosser"
-    preview="coming-soon.png"
+    preview="word-crosser.png"
     description="Crossword puzzle generator."
     technologies="Python" />
 
   <Program
     href="https://github.com/abuchanan/benson"
     title="benson"
-    preview="coming-soon.png"
+    preview="benson.png"
     description="My first, very simple, single level game made with Unity3d."
     technologies="Unity3d" />
 
   <Program
     href="https://github.com/abuchanan/taj"
     title="taj"
-    preview="coming-soon.png"
+    preview="taj.png"
     description="Toy simulation of battling clans of castles, soldiers, etc."
     technologies="Python, Javascript" />
 
   <Program
-    href="https://github.com/abuchanan/tree"
-    title="tree"
-    preview="coming-soon.png"
-    description="Programmatically drawing a tree (the leafy green kind)."
-    technologies="Javascript, Three.js" />
-
-  <Program
     href="https://github.com/abuchanan/alfred"
     title="alfred"
-    preview="coming-soon.png"
+    preview="alfred.png"
     description="Programmed stick figure animation and inverse kinematics."
     technologies="Javascript" />
 
   <Program
-      href="https://github.com/abuchanan/gff"
-      title="gff"
+    href="https://github.com/abuchanan/gff"
+    title="gff"
+    preview="gff.png"
+    description="A parser for GFF3-formatted files." />
+
+  <Program
+    href="https://github.com/abuchanan/annotation"
+    title="annotation"
+    preview="annotation.png"
+    description="Genome annotation models" />
+
+  <Program
+    href="https://github.com/abuchanan/interval"
+    title="interval"
+    preview="interval.png"
+    description="A small utility class for representing intervals." />
+
+  <Program
+    href="https://github.com/abuchanan/fastq"
+    title="fastq"
     preview="coming-soon.png"
-      description="A parser for GFF3-formatted files." />
+    description="FASTQ file reader." />
 
   <Program
-      href="https://github.com/abuchanan/annotation"
-      title="annotation"
-          preview="coming-soon.png"
-      description="Genome annotation models" />
+    href="https://github.com/abuchanan/fasta"
+    title="fasta"
+    preview="coming-soon.png"
+    description="FASTA file reader." />
 
   <Program
-      href="https://github.com/abuchanan/interval"
-      title="interval"
-          preview="coming-soon.png"
-      description="A small utility class for representing intervals." />
+    href="https://github.com/abuchanan/jeans"
+    title="jeans"
+    preview="coming-soon.png"
+    description="Gene/transcript expression analysis." />
 
   <Program
-      href="https://github.com/abuchanan/fastq"
-      title="fastq"
-          preview="coming-soon.png"
-      description="FASTQ file reader." />
-
-  <Program
-      href="https://github.com/abuchanan/jeans"
-      title="jeans"
-          preview="coming-soon.png"
-      description="Gene/transcript expression analysis." />
-
-  <Program
-      href="https://github.com/abuchanan/fasta"
-      title="fasta"
-          preview="coming-soon.png"
-      description="FASTA file reader." />
-
-  <Program
-      href="https://github.com/abuchanan/chunk_writer"
-      title="chunk_writer"
-          preview="coming-soon.png"
-      description="Utility splitting lots of records in to smaller chunks." />
+    href="https://github.com/abuchanan/chunk_writer"
+    title="chunk_writer"
+    preview="coming-soon.png"
+    description="Utility splitting lots of records in to smaller chunks." />
 
   <Program
       href="https://github.com/abuchanan/sequence_utils"
       title="sequence_utils"
-          preview="coming-soon.png"
+      preview="coming-soon.png"
       description="Tools for working with genome sequences" />
 
   <Program
@@ -223,13 +232,6 @@ export default props => <main id="code-page">
         preview="coming-soon.png"
     description="Statistics utility for one-pass, parallel calculation of variance."
     technologies="Python" />
-
-  <Program
-    href="https://github.com/abuchanan/kindlespark"
-    title="kindlespark"
-        preview="coming-soon.png"
-    description="Utility for generating Kindle ebooks from SparkNotes webpages."
-    technologies="Go" />
 
   <Program href="https://github.com/abuchanan/bolts" title="bolts"
       preview="coming-soon.png"

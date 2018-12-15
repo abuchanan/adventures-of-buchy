@@ -80,6 +80,7 @@ RenderPlugin.prototype.apply = function(compiler) {
 };
 
 module.exports = {
+  // devtool: "source-map",
   module: {
     loaders: [
       {

@@ -19,6 +19,7 @@ import PhotographyEndsOrMeans from '../pages/prose/photography-ends-or-means';
 import BuildingThisWebsite from '../pages/prose/building-this-website';
 import ImprovedPrefetching from '../pages/prose/improved-prefetching';
 import LocationSearchDemo from '../demo/location-search';
+import TreeDemo from '../demo/tree';
 
 export default function getRoutes(isClient) {
 
@@ -73,6 +74,7 @@ function lazy(loader, onload) {
 }
 
 const Demos = [
+  { id: 'tree', component: TreeDemo },
   { id: 'location-search', component: LocationSearchDemo },
 ];
 
@@ -97,6 +99,62 @@ const ArtAlbums = [
 ];
 
 const PhotoAlbums = [
+  {
+    id: 'life-in-august',
+    title: 'Life in August',
+    description: 'Ah, the great outdoors.',
+    teaser: 'http://adventures-of-buchy.xyz/photos/life-in-august/full/021.jpg',
+    images: buildImageData('photos/life-in-august', 39),
+  },
+  {
+    id: 'nehalem-bay-birds',
+    title: 'Nehalem Bay Birds',
+    description: 'Herons, geese, and friends.',
+    teaser: 'http://adventures-of-buchy.xyz/photos/nehalem-bay-birds/full/003.jpg',
+    images: buildImageData('photos/nehalem-bay-birds', 19),
+  },
+  {
+    id: 'backyard-animals',
+    title: 'Backyard Animals',
+    description: 'Animals around the house and yard.',
+    teaser: "http://adventures-of-buchy.xyz/photos/backyard-animals/full/005.jpg",
+    images: buildImageData('photos/backyard-animals', 16),
+  },
+  {
+    id: 'backyard-droplets',
+    title: 'Backyard Droplets',
+    description: 'The morning after a rain leaves lots of droplets on the plants.',
+    teaser: "http://adventures-of-buchy.xyz/photos/backyard-droplets/full/005.jpg",
+    images: buildImageData('photos/backyard-droplets', 19),
+  },
+  {
+    id: 'backyard-flowers',
+    title: 'Backyard Flowers',
+    description: 'Flowers in the backyard at home.',
+    teaser: "http://adventures-of-buchy.xyz/photos/backyard-flowers/full/005.jpg",
+    images: buildImageData('photos/backyard-flowers', 15),
+  },
+  {
+    id: 'the-fourth',
+    title: 'The Fourth',
+    description: 'First weekend back home after two years, seeing family and friends.',
+    teaser: "http://adventures-of-buchy.xyz/photos/the-fourth/full/005.jpg",
+    images: buildImageData('photos/the-fourth', 19),
+  },
+  {
+    id: 'cathedrals-are-cool',
+    title: 'Cathedrals are cool',
+    description: 'A day spent being a tourist in Melbourne.',
+    teaser: "http://adventures-of-buchy.xyz/photos/cathedrals-are-cool/full/005.jpg",
+    images: buildImageData('photos/cathedrals-are-cool', 15),
+  },
+  {
+    id: 'a-day-at-the-zoo',
+    title: 'A Day at the Zoo',
+    description: 'Taking the new zoom lens for a walk to the Melbourne Zoo',
+    teaser: "http://adventures-of-buchy.xyz/photos/a-day-at-the-zoo/full/036.jpg",
+    images: buildImageData('photos/a-day-at-the-zoo', 117),
+  },
   {
     id: 'may-days-in-melbourne',
     title: 'May Days in Melbourne',
