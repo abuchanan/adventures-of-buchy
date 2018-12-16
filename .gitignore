@@ -1,4 +1,3 @@
-built/
-assets/
-squares/
-venv/
+/build/
+/assets/
+/squares/

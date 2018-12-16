@@ -1,0 +1,21 @@
+{{ define "title" }}Photos{{ end }}
+
+{{ define "content" }}
+<main id="photos-page">
+
+  {{ range .Albums }}
+    {{ $album := . }}
+    <div class="album">
+      <h1>{{ .Title }}</h1>
+
+      {{ range .Images -}}
+        <a href="/photos/{{ $album.ID }}/"><div class="mini" style='
+          background-image: url("{{ .MiniSheetURL }}");
+          background-position: {{ .MiniSheetOffset }}px 0;
+        '></div></a>
+      {{- end }}
+    </div>
+  {{ end }}
+
+</main>
+{{ end }}

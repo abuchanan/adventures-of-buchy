@@ -1,12 +1,4 @@
-import React from 'react';
-import { Head, Prose, YouTube } from '../../common/components';
-
-export default props => <Prose
-  title="Efficiently Loading Photos"
-  postDate="May 14th, 2016"
-  description="I wrote a photo viewer component for this website and along the way I learned a thing or two about efficiently loading photos."
->
-
+{{ define "prose-content" }}
 <p>
 Photos are large files and those can take a few seconds to load on a website. That creates a sluggish user experience; you press the "next" button and the screen goes black while the image slowly loads. The goal is to smooth over this rough experience so the user doesn't notice the lag as much, even on mobile networks where download speeds are slow.
 </p>
@@ -18,7 +10,7 @@ Photos are large files and those can take a few seconds to load on a website. Th
 The first step is to get the photos to a reasonable size. The original version of the photo below weighs in at <strong>6MB</strong> at full size and 100% quality. <strong>6MB!</strong> That would take <em>foooorrreeevvverrrr</em> to load. I resize photos to fit within 1000x1000 and use 80% quality, which brings the size down to <strong>154KB</strong>, already a massive improvement.
 </p>
 
-<p className="centered-image">
+<p class="centered-image">
   <img src="/photos/melbourne-feb-2016/full/025.jpg" />
 </p>
 
@@ -56,9 +48,9 @@ Progressive JPEGs are great but there's still an unpleasant delay after clicking
 My solution is to load a very lightweight thumbnail as a placeholder. The thumbnail images only weigh 1-2KB, less than most other resources on a website, so they load very quickly. Using the support for multiple background images in CSS3, this is stupid easy to implement:
 </p>
 
-<pre><code>{`.viewer {
+<pre><code>{{ `.viewer {
   background-image: url(thumbnail.jpg), url(photo.jpg);
-}`}</code></pre>
+}` | html }}</code></pre>
 
 <p>
 I use imagemagick to generate small, lightweight thumbnails with some extra blur applied:
@@ -91,4 +83,4 @@ I still have room for improvement. I should probably have more aggressive prefet
 If you made it this far, thanks for reading! Let me know what you think.
 </p>
 
-</Prose>;
+{{ end }}

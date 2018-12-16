@@ -1,0 +1,30 @@
+{{ define "title" }}Code{{ end }}
+
+{{ define "content" }}
+<main id="code-page">
+
+{{ range .Programs }}
+<div class="code-project {{ .ExtraClass }}">
+  <h2>{{ .Title }}</h2>
+
+  {{ if .Preview }}
+  <div class="preview"
+    style='background-image: url("/code-project-mocks/{{ .Preview }}")'
+  >
+  </div>
+  {{ end }}
+
+  <div class="description">
+    <div class="text-content">{{ .Description }}</div>
+    <div class="buttons">
+      {{ if .Demo }}
+      <a class="demo-link" href="{{ .Demo }}">Demo</a>
+      {{ end }}
+      <a class="code-link" href="{{ .Href }}">View code</a>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+</main>
+{{ end }}

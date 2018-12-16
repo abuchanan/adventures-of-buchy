@@ -1,14 +1,9 @@
-import React from 'react';
-import { Head, YouTube } from '../common/components';
+{{ define "title" }}Videos | Alex Buchanan{{ end }}
 
-export default props => <main>
-<Head
-  title="Videos"
-/>
-
+{{ define "content" }}
   <YouTube code="jFZA_AlcEGY" />
   <YouTube code="TVN5cKp6EcQ" />
   <YouTube code="eM50UzCZBMM" />
   <YouTube code="rOVNRNG8mrc" />
   <YouTube code="YmRiOXHyNPs" />
-</main>;
+{{ end }}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>{{ block "title" . }}Alex Buchanan{{ end }}</title>
+  {{ block "meta" . }}{{ end }}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TODO Place favicon.ico in the root directory -->
+  <link rel='stylesheet' href='/{{ .Style }}'>
+
+</head>
+<body class="nav-closed">
+  <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="page">
+  <div id="container">
+
+    <header id="site-header">
+      <nav class='main-nav'>
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/photos/">Photos</a>
+        <a class="nav-item" href="/code/">Code</a>
+        <a class="nav-item" href="/art/">Art</a>
+        <!--<a class="nav-item" href="/videos/">Videos</a>--!>
+        <a class="nav-item" href="/books/">Books</a>
+        <a class="nav-item" href="/prose/">Prose</a>
+        <a class="nav-item" href="/resume/">Resume</a>
+      </nav>
+      <button id="toggle-nav"></button>
+    </header>
+
+    <div id="content-container">
+    {{ block "content" . }}{{ end }}
+    </div>
+  </div>
+  </div>
+
+  <script src="/{{ .JS }}"></script>
+  {{ block "scripts" . }}{{ end }}
+
+</body>
+</html>

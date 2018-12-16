@@ -1,0 +1,9 @@
+{{ define "title" }}Books | Alex Buchanan{{ end }}
+
+{{ define "content" }}
+<main class="book-covers">
+  {{ range .Books -}}
+    <img class="book-cover" src="/bookcovers/{{ .CoverImage }}" title="{{ .Title | html }}" >
+  {{- end }}
+</main>
+{{ end }}

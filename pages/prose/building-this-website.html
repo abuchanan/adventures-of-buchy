@@ -1,12 +1,4 @@
-import React from 'react';
-import { Head, Prose } from '../../common/components';
-
-export default props => <Prose
-  title="Building This Website: React, Webpack, and Amazon"
-  postDate="May 28th, 2016"
-  description="Here's a little bit about how this website is built."
->
-
+{{ define "prose-content" }}
 <h2>1. It's static</h2>
 
 <p>
@@ -24,7 +16,7 @@ What's React? It's a library for building user interfaces; think Angular directi
 
 <ul>
   <li>I can write simple, declarative HTML easily</li>
-  <li>I can invent new components to keep things simple e.g. the <strong>{`<Program />`}</strong> component on my "Code" page</li>
+  <li>I can invent new components to keep things simple e.g. the <strong>{{ `<Program />` | html }}</strong> component on my "Code" page</li>
   <li>When I need more power and control, I'm already in Javascript land</li>
   <li>I don't need Markdown/Jinja/YAML/etc. because JS + JSX covers nearly everything I need</li>
 </ul>
@@ -35,7 +27,7 @@ What's React? It's a library for building user interfaces; think Angular directi
 <i>Uh, wat? What's that Jargony McJargonface?</i> Basically I wanted those nice automatic previews when sharing a post on Facebook.
 </p>
 
-<p className="centered-image">
+<p class="centered-image">
 <img src="/prose/building-this-website/fb-preview-example.png" />
 </p>
 
@@ -43,17 +35,17 @@ What's React? It's a library for building user interfaces; think Angular directi
 The first version of this site required your browser to load and run Javascript in order to render the page content. But, Facebook's page scraper doesn't run Javascript, so it couldn't access the information needed to generate the preview automatically.
 </p>
 
-<pre><code>{`<!doctype html>
+<pre><code>{{ `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
 
-  <title>Bali @ The Adventures of Buchy</title>
+  <title>Bali | Alex Buchanan</title>
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="Bali"/>
   <meta property="og:description" content="Photos from a trip to Bali."/>
-  <meta property="og:image" content="http://adventures-of-buchy.xyz/photos/bali/full/012.jpg"/>
-`}</code></pre>
+  <meta property="og:image" content="http://eabuc.com/photos/bali/full/012.jpg"/>
+` | html }}</code></pre>
 
 <p>
 The solution was server-side rendering. Using React and React-Router, it's easy to generate the HTML for a given page. I upload that HTML to the server so that pages still work without Javascript. This allows Facebook and Google to easily find the information they need.
@@ -152,7 +144,7 @@ This site is standing on the shoulders of giants:
 Those are all seriously big, complex projects, and most are shared openly and freely with the world. The software world can be really cool sometimes.
 </p>
 
-<p>Check out the code on Github if you're curious: <a href="https://github.com/abuchanan/adventures-of-buchy">https://github.com/abuchanan/adventures-of-buchy</a>
+<p>Check out the code on Github if you're curious: <a href="https://github.com/buchanae/eabuc">https://github.com/buchanae/eabuc</a>
 </p>
 
-</Prose>
+{{ end }}

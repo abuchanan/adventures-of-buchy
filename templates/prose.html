@@ -1,0 +1,30 @@
+
+{{ define "title" }}{{ .Prose.Title }}{{ end }}
+
+{{ define "meta" }}
+  <meta name="og:type" content="article">
+  <meta name="og:title" content="{{ .Prose.Title }}">
+  <meta name="og:description" content="{{ .Prose.Description }}">
+{{ end }}
+
+{{ define "content" }}
+<article class="prose">
+
+<div class="header-wrapper">
+  <header>
+    <h1>{{ .Prose.Title }}</h1>
+    <aside class="post-date">{{ .Prose.Date }}</aside>
+  </header>
+</div>
+
+<div class="description-wrapper">
+  <aside class="description">{{ .Prose.Description }}</aside>
+</div>
+
+<div class="content-wrapper">
+  <div class="content">
+  {{ block "prose-content" .Prose }}{{ end }}
+  </div>
+</div>
+</article>
+{{ end }}

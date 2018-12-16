@@ -1,0 +1,80 @@
+{{ define "title" }}Resume | Alex Buchanan{{ end }}
+
+
+{{ define "content" }}
+<main id="resume-page">
+
+<h2>School</h2>
+<section class="resume-section">
+
+<h3>B.S. Computer Science/Computer Systems @ Oregon State University</h3>
+<p class="dates">2003-2007, 2011-2013</p>
+<p>Also studied Electrical Engineering, Business, Spanish, Biology but completed no degrees.</p>
+</section>
+
+<h2>Work</h2>
+
+<section class="resume-section">
+<h3>OHSU Computational Biology</h3>
+<p class="technologies">Cancer research, Go, Google Cloud, AWS, devops, Docker, workflows, scikit</p>
+<p>Built distributed batch task service (Funnel) from scratch in Go. Deployed on Google, AWS, OpenStack, and more. Primary author of community-mananged API spec.</p>
+<p>Also data scientist doing research on predicting the effect of cancer treatments on a per-patient basis.</p>
+</section>
+
+<section class="resume-section">
+<h3>Nintex</h3>
+<p class="technologies">Web: Javascript, Node, Gulp, Angular, React</p>
+<p>In <span class="dates">2016</span>, I worked on front-end development for a core UX team. </p>
+</section>
+
+<section class="resume-section">
+<h3>Findly</h3>
+<p class="technologies">Web: Javascript, Node, jQuery, Gulp</p>
+<p>In <span class="dates">2014</span>, I worked on every aspect of a complex product called CX Apply, a web application proxies a third-party job application form in order to provide a nice experience on mobile devices.</p>
+<p>Wrapping an existing application that we had no control over was challenging, and we had to get pretty creative. In addition, this project was quickly accelerated from an experiment to the most important product in the company, growing from 2 developers to 10+, and facing a lot of growing pains the whole way. I learned a lot about project management and stress on this project.</p>
+</section>
+
+<section class="resume-section">
+<h3>Botany and Plant Pathology @ Oregon State University</h3>
+<p class="technologies">Bioinformatics: Python, Perl, Sun Grid Engine, Linux</p>
+<p>From <span class="dates">2011 to 2014</span>, I worked on bioinformatics with a few labs. I helped  researcher get insights into their data by writing programs. Mostly I worked on transcriptomics projects.</p>
+<p>This was such a great experience. Biology is such a fascinating topic. I learned it's also a very broad topic, with hundreds (or thousands) of subtopics, all interesting in their own way, and most big enough to sustain lifetimes of work and research.</p>
+<p>This also exposed me to a new area of programming – data processing. It was nice to take a break from web development and exercise other aspects of software engineering and computer science. Some datasets were big enough to warrant concurrent processing, and learning to throw a few machines at a problem was a lot of fun.</p>
+</section>
+
+<section class="resume-section">
+<h3>Mozilla</h3>
+<p class="technologies">Web: PHP, Python, Javascript, Django, Drupal</p>
+<p>During <span class="dates">2007 to 2010</span>, I worked on web development on numerous projects, mostly in conjunction with the marketing team.</p>
+<p>I really feel like I grew up as a software engineer at Mozilla, and you couldn't ask for a better environment to grow up in. I was surrounded by people way smarter than me. I got to absorb Mozilla's mission and principles. I worked with people from around the world on a daily basis. I started as an intern working on tiny, internal PHP projects. Through the years I worked on dozens of different projects with lots of different teams. The variety was exciting. I owned most projects on mozilla.com for awhile, and it felt pretty cool (and sometimes scary!) to know I helped serve a website to hundreds of millions of people.</p>
+</section>
+
+<section class="resume-section">
+<h3>Open Source Lab @ Oregon State University</h3>
+<p class="technologies">Web: PHP, Drupal, Javascript</p>
+
+<p>During <span class="dates">2006 and 2007</span>, I had my first job in software, learning web development and generally having a great time with a bunch of Linux nerds.</p>
+
+<p>I learned PHP and Drupal during this time. I designed and built two websites: osuosl.org (the lab's website) and goscon.org (government open-source conference website). I also learned that I am bad at graphic design.</p>
+
+<p>I worked on a project which would help the infrastructure team manage their inventory of servers and networks and all that goes along with those. Looking back, I laugh because I think we spent more time debating our homegrown PHP app framework, or the website content, or the project name than we did putting features in front of users. Typical.</p>
+
+<p>This job really set the path of my life and career for 5-10 years. When I applied for this job, I also applied for the Business Solutions Group, a Microsoft shop. I got both jobs and I had to choose. Being young and inexperienced, I'm sure my decision was mostly arbitrary, but I do remember being drawn to the idea of open source. So, I chose the OSL and became a Linux zealot and a web developer and I still am. Sometimes I ponder where I'd be if I had chosen the other path.</p>
+</section>
+
+<h2>Science</h2>
+<section class="resume-section">
+<p>I feel very lucky to have had the opportunity to live inside a world of biology research for a few years. Below are some of the projects I contributed to.</p>
+</section>
+
+<section class="resume-section">
+  <h3>Publications</h3>
+  {{ range .Pubs }}
+  <div>
+    <a href={{ .URL }}>{{ .Title }}</a>
+  </div>
+  {{ end }}
+</section>
+
+</main>
+{{ end }}

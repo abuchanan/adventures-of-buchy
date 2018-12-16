@@ -11,12 +11,10 @@ maybe make use of doodles to spice up home page?
 
 # Code
 
-
 viewer
 - movement during swipe
 - zooming (button? double tap? click?)
 - meta data on images
-- title and caption for images
 - url update for viewer image. query string?
 - load smaller images in viewer on mobile?
 - loading spinner
@@ -27,14 +25,5 @@ CDN
 code highlighting
 
 RSS/atom feed
-
-
-improve analytics
-- how far do people get through photo albums
-- how to gauge interest in photos?
-- tags for entry points shared on FB
-
-
-Shut down tumblr?
 
 Lazy loading for albums page

@@ -1,14 +1,6 @@
-import React from 'react';
-import { Head, Prose, YouTube } from '../../common/components';
-
-export default props => <Prose
-  title="Improved prefetching for the photo viewer"
-  postDate="June 5th, 2016"
-  description="In which I discover, yet again, that the browser vendors have been hard at work building cool shit that makes my work surprisingly easy."
->
-
+{{ define "prose-content" }}
 <p>
-  <strong>TLDR;</strong> check out <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ"><code>{'<link rel="prefetch">'}</code></a> if you don't already know about it. It makes prefetching resources really easy.
+  <strong>TLDR;</strong> check out <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ"><code>{{ `<link rel="prefetch">` | html }}</code></a> if you don't already know about it. It makes prefetching resources really easy.
 </p>
 
 <p>
@@ -20,16 +12,16 @@ export default props => <Prose
 </p>
 
 <p>
-  Then I discovered <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ"><code>{'<link rel="prefetch">'}</code></a> which basically solved all the issues better than I could have ever done from Javascript. Instead of writing my writing my own prefetch controls, I just sprinkle a few <code>{'<link rel="prefetch">'}</code> tags into the body and the browser handles all the difficult parts in an intelligent way.
+  Then I discovered <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ"><code>{{ `<link rel="prefetch">` | html }}</code></a> which basically solved all the issues better than I could have ever done from Javascript. Instead of writing my writing my own prefetch controls, I just sprinkle a few <code>{{ `<link rel="prefetch">` | html }}</code> tags into the body and the browser handles all the difficult parts in an intelligent way.
 </p>
 
 <p>
   In the end, this is almost all the code I needed to add:
 </p>
 
-<pre><code>{`prefetchList(viewerState).map(image => (
+<pre><code>{{ `prefetchList(viewerState).map(image => (
   <link rel="prefetch" href={image.url} key={"prefetch-" + image.url} />
-))`}</code></pre>
+))` | html }}</code></pre>
 
 <p>
   <code>prefetchList</code> basically just gets the next five images from an array, but there is some slightly more advanced code that tracks the direction the user is browsing ("forward/backward").
@@ -39,4 +31,4 @@ export default props => <Prose
   So once again, the browser vendors have made my task really simple when I thought it was going to be really complex. Thanks browser vendors!
 </p>
 
-</Prose>;
+{{ end }}
