@@ -8,19 +8,12 @@ news about new photos albums on home page
 
 maybe make use of doodles to spice up home page?
 
-
-# Code
-
 viewer
-- movement during swipe
-- zooming (button? double tap? click?)
-- meta data on images
+- mobile swipe. movement during swipe
 - url update for viewer image. query string?
 - load smaller images in viewer on mobile?
 - loading spinner
-
-CDN
-- invalidate HTML on deploy? Only a problem if I deploy twice in one day and I'm keen for people to see the udpates immediately?
+- clicking mini should open viewer at the image
 
 code highlighting
 
