@@ -25,6 +25,12 @@ var Art = []*Album{
 
 var Photos = []*Album{
   {
+    ID: `etcetera`,
+    Title: `Etcetera`,
+    Description: `Catching up with the last two years.`,
+    Teaser: `etcetera/009.jpg`,
+  },
+  {
     ID: `life-in-august`,
     Title: `Life in August`,
     Description: `Ah, the great outdoors.`,
